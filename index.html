@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manish Chand · Engineer</title>
+<meta name="description" content="Manish Chand: Senior Software Engineer in Gurugram building full-stack, event-driven and AI-powered systems with Node.js, React, PostgreSQL, MongoDB and Google Cloud.">
+<meta property="og:title" content="Manish Chand · Senior Software Engineer">
+<meta property="og:description" content="Full-stack, event-driven and AI systems. Node.js, React, PostgreSQL, MongoDB, Google Cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident engineer's datasheet; exact, calm, no fluff.
+   IDEA: a system spec sheet; the person documented like a service.
+   PICTURE: a live architecture diagram of the systems he builds (API, Pub/Sub, LLM via MCP, data stores, ELK).
+   COLOUR and TYPE: cobalt #1240e0 strip, white, black, pale #eef2ff zones; Space Grotesk + Inter.
+   LAYOUT: cobalt hero band with name and diagram, then dense aligned panels: experience, projects, skills, contact. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0a0d18);--ink:light-dark(#0b0d14,#e8ecff);--mute:light-dark(#4a5068,#a3abc9);
+--zone:light-dark(#eef2ff,#111733);--line:light-dark(#d6ddf5,#232b52);--co:#1240e0;--co-ink:light-dark(#1240e0,#8aa4ff);
+--card:light-dark(#ffffff,#0e1330)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:var(--co-ink)}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:600}
+h3{font-size:19px;font-weight:600}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+.zone{background:var(--zone)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;padding:12px max(5vw,16px)}
+nav .me{font:600 17px "Space Grotesk",sans-serif;color:var(--ink);text-decoration:none;margin-right:auto}
+nav .links{display:flex;flex-wrap:wrap;gap:2px 18px}
+nav .links a{color:var(--mute);text-decoration:none;font-size:15px;padding:8px 0}
+nav .links a:hover{color:var(--ink)}
+
+/* hero */
+.hero{background:var(--co);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:700;letter-spacing:-.02em;line-height:1}
+.role{font:500 clamp(18px,2vw,22px) "Space Grotesk",sans-serif;margin:14px 0 18px;color:#dfe6ff}
+.hero p{max-width:60ch;color:#eef2ff;margin:0 0 26px;font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.facts li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 12px;font-size:14px;white-space:nowrap}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.solid{background:#fff;color:#0b1a66}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn:focus-visible,a:focus-visible{outline:3px solid #ffd84d;outline-offset:3px}
+.diagram{width:100%;height:auto;display:block}
+.diagram .node rect{fill:#fff;stroke:none}
+.diagram .node.alt rect{fill:#0b1a66}
+.diagram .node text{font:600 14px "Space Grotesk",sans-serif;fill:#0b1a66;text-anchor:middle;dominant-baseline:middle}
+.diagram .node.alt text{fill:#fff}
+.diagram .sub{font:500 11px Inter,sans-serif!important;fill:#4a5aa8!important}
+.diagram .node.alt .sub{fill:#b9c6ff!important}
+.diagram .edge{stroke:#b9c6ff;stroke-width:2;fill:none;stroke-dasharray:6 6;animation:flow 1.6s linear infinite}
+.diagram .obs rect{fill:rgba(255,255,255,.12);stroke:rgba(255,255,255,.4)}
+.diagram .obs text{font:500 12.5px Inter,sans-serif;fill:#fff;text-anchor:middle;dominant-baseline:middle}
+@keyframes flow{to{stroke-dashoffset:-24}}
+@media (prefers-reduced-motion:reduce){.diagram .edge{animation:none}html{scroll-behavior:auto}}
+
+/* section head */
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:28px}
+.head p{margin:0;color:var(--mute);max-width:60ch}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 32px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:2px solid var(--ink)}
+.when{font:500 15px "Space Grotesk",sans-serif;color:var(--mute);white-space:nowrap}
+.org{color:var(--co-ink);font-weight:600}
+.job h3 span{font-weight:500;color:var(--mute)}
+.job h4{font:600 15px Inter,sans-serif;margin:16px 0 4px}
+.job ul{margin:10px 0 0;padding-left:1.1em}
+.job li{margin:7px 0;max-width:78ch}
+.job li::marker{color:var(--co-ink)}
+b{font-weight:600}
+.stack-line{font-size:14px;color:var(--mute);margin-top:10px}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card .tag{font-size:13px;color:var(--mute)}
+.card p{margin:0;color:var(--ink)}
+.card .row{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:auto;padding-top:8px}
+.card .row a{font-weight:600;font-size:15px;text-decoration:none;padding:6px 0}
+.card .row a:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0;list-style:none}
+.chips li{font-size:13px;background:var(--zone);border:1px solid var(--line);border-radius:6px;padding:2px 8px;white-space:nowrap}
+.card.live{border-top:4px solid var(--co)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+.skills .card h3{font-size:17px}
+
+/* edu + contact */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.edu{border-top:2px solid var(--ink);padding-top:18px}
+.edu p{margin:4px 0;color:var(--mute)}
+.contact{background:var(--co);color:#fff;border-radius:18px;padding:clamp(24px,4vw,40px)}
+.contact h2{color:#fff}
+.contact p{color:#eef2ff;margin:12px 0 22px}
+.contact .mail{display:block;font:600 clamp(18px,2.4vw,24px) "Space Grotesk",sans-serif;color:#fff;overflow-wrap:anywhere;margin-bottom:20px}
+footer{padding:28px max(5vw,16px);color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media(max-width:900px){.hero .wrap,.two{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.job{grid-template-columns:minmax(0,1fr);gap:4px}nav .me{width:100%}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="me" href="#top">Manish Chand</a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero band" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Manish Chand</h1>
+      <div class="role">Senior Software Engineer · Full-stack, event-driven and AI systems</div>
+      <p>I build backend services and the products on top of them with Node.js, React, PostgreSQL, MongoDB, Redis and Google Cloud. Lately that means event-driven pipelines on Pub/Sub and LLM assistants grounded in real company data through MCP. I care about systems that stay simple, observable and easy to change.</p>
+      <ul class="facts">
+        <li>5 years experience</li>
+        <li>Gurugram, India</li>
+        <li>Delhi Technological University</li>
+      </ul>
+      <div class="cta">
+        <a class="btn solid" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="resume.pdf">Download résumé (PDF)</a>
+        <a class="btn ghost" href="https://github.com/dev-chandmanish">GitHub</a>
+      </div>
+    </div>
+
+    <svg class="diagram" viewBox="0 0 520 400" role="img" aria-label="Diagram of the kind of system Manish builds: a client calls a Node.js API, which talks to an LLM through MCP tools, publishes events to Pub/Sub for workers, and stores data in PostgreSQL, MongoDB and Redis, all monitored with the ELK stack.">
+      <path class="edge" d="M140 62 H200"/>
+      <path class="edge" d="M340 62 H380"/>
+      <path class="edge" d="M270 84 V150"/>
+      <path class="edge" d="M340 172 H380"/>
+      <path class="edge" d="M270 84 C270 120 85 120 85 280"/>
+      <path class="edge" d="M270 194 V280"/>
+      <path class="edge" d="M440 194 V280"/>
+      <g class="node"><rect x="20" y="36" width="120" height="52" rx="10"/><text x="80" y="55">Client</text><text class="sub" x="80" y="73">React · Next.js</text></g>
+      <g class="node"><rect x="200" y="36" width="140" height="52" rx="10"/><text x="270" y="55">API service</text><text class="sub" x="270" y="73">Node.js · GraphQL</text></g>
+      <g class="node alt"><rect x="380" y="36" width="120" height="52" rx="10"/><text x="440" y="55">LLM agent</text><text class="sub" x="440" y="73">tools via MCP</text></g>
+      <g class="node alt"><rect x="200" y="146" width="140" height="52" rx="10"/><text x="270" y="165">Pub/Sub</text><text class="sub" x="270" y="183">events · batches</text></g>
+      <g class="node"><rect x="380" y="146" width="120" height="52" rx="10"/><text x="440" y="165">Workers</text><text class="sub" x="440" y="183">Lambda · jobs</text></g>
+      <g class="node"><rect x="20" y="280" width="130" height="46" rx="10"/><text x="85" y="303">PostgreSQL</text></g>
+      <g class="node"><rect x="205" y="280" width="130" height="46" rx="10"/><text x="270" y="303">MongoDB</text></g>
+      <g class="node"><rect x="380" y="280" width="120" height="46" rx="10"/><text x="440" y="303">Redis</text></g>
+      <g class="obs"><rect x="20" y="350" width="480" height="34" rx="8"/><text x="260" y="367">Observability · Elastic · Logstash · Kibana</text></g>
+    </svg>
+  </div>
+</header>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <div class="head">
+      <h2>Experience</h2>
+      <p>What I delivered, how it was measured, and how I built it.</p>
+    </div>
+
+    <article class="job">
+      <div class="when">Sep 2026 – Present</div>
+      <div>
+        <h3>Senior Software Engineer <span>at</span> <span class="org">AdMedia Technologies</span></h3>
+        <ul>
+          <li>Launched a <b>public AI travel assistant for Leisure.com</b> that resolves traveller questions in conversation, by building an <b>OpenAI tool-calling loop</b> that plans, calls tools and composes the final answer.</li>
+          <li>Grounded the assistant's answers in <b>live Leisure data instead of model guesses</b>, by exposing Leisure-owned HTTP APIs as tools through an <b>internal MCP server</b>.</li>
+        </ul>
+        <div class="stack-line">Node.js · OpenAI API · Model Context Protocol</div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Oct 2024 – Apr 2026</div>
+      <div>
+        <h3>Senior Software Engineer <span>at</span> <span class="org">Gravity Engineering Services</span></h3>
+        <ul>
+          <li>Made processing of large product catalogs <b>up to 10x faster</b> by replacing one-at-a-time handling with <b>batch processing and Google Cloud Pub/Sub</b> event pipelines.</li>
+          <li>Gave teams <b>one view of every customer order across its lifecycle stages</b> by designing and building an <b>Order Tracking Service</b> from scratch.</li>
+          <li>Enabled <b>real-time messaging between users across multiple Inventory Management Services</b> by integrating the <b>CometChat API</b> into the shared notification service.</li>
+          <li>Showed that <b>multilingual storefronts were viable</b> by building a proof of concept on the <b>Google Gemini Translation API</b>.</li>
+          <li>Reduced complexity in legacy modules, <b>tracked through CodeScene code-health scores</b>, by refactoring them toward SOLID principles.</li>
+          <li>Sped up diagnosis of production incidents by setting up <b>Elastic and Logstash monitoring</b> and owning post-release support with <b>Metabase and Jenkins</b>.</li>
+          <li>Shipped <b>multiple new and improved APIs</b> on a Java-based e-commerce platform by using <b>Cursor AI</b> to speed up development.</li>
+        </ul>
+        <div class="stack-line">Node.js · Java · Google Cloud Pub/Sub · Gemini · PostgreSQL · ELK · Jenkins</div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Sep 2023 – Jun 2024</div>
+      <div>
+        <h3>Senior Software Developer <span>at</span> <span class="org">Ezeiatech Systems</span></h3>
+        <h4>Samsung Csync: product-content syndication to US retailers</h4>
+        <ul>
+          <li>Helped <b>launch the Galaxy S24 flagship across US retailers</b> by maintaining Csync's syndication pipeline and fixing XML feed issues daily before delivery to Syndigo.</li>
+          <li>Connected Csync to <b>3 major US retailers (Walmart, Best Buy, BrandSmart)</b> by integrating each retailer's services into the platform.</li>
+          <li>Made the ToolKit addition flow easier to use by redesigning it <b>across UI and backend</b>.</li>
+        </ul>
+        <h4>Cars24: test automation framework</h4>
+        <ul>
+          <li>Automated <b>about 1,500 UI test cases</b> across the buyer-to-seller and seller-to-buyer flows of the Cars24 mobile web app, by building a <b>Playwright + Cucumber</b> framework and <b>leading a team of developers and testers</b>.</li>
+        </ul>
+        <div class="stack-line">TypeScript · Node.js · GraphQL · React · Docker · AWS · Playwright · Cucumber</div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Jul 2022 – Jul 2023</div>
+      <div>
+        <h3>Software Developer <span>at</span> <span class="org">Mobikasa</span></h3>
+        <ul>
+          <li>Delivered <b>3 web apps (patient, provider and admin portals)</b> for a doorstep-healthcare company by building them on React, Redux, Node.js and microservices over MongoDB and PostgreSQL.</li>
+          <li>Enabled <b>online payments across the platform</b> by integrating the <b>Stripe API</b>.</li>
+          <li>Let patients <b>check delivery availability before ordering</b> by building a pincode-based product availability API.</li>
+        </ul>
+        <div class="stack-line">React · Redux · Node.js · MongoDB · PostgreSQL · Docker · Stripe</div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Jun 2021 – Jun 2022</div>
+      <div>
+        <h3>Software Developer <span>at</span> <span class="org">RxLogix Corporation</span></h3>
+        <ul>
+          <li>Migrated a <b>high-volume data bridge between two applications from Java to Node.js</b>, end to end, by rebuilding it as a <b>serverless system on AWS Lambda, EventBridge, DynamoDB and CloudFormation</b>.</li>
+          <li>Owned <b>development, testing and deployment</b> of the service across internal and client environments.</li>
+          <li>Built a link-sharing app where users publish and share content, using Groovy, Grails and Bootstrap.</li>
+        </ul>
+        <div class="stack-line">Node.js · AWS Lambda · EventBridge · DynamoDB · S3 · SQS · Spring Boot</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band zone" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <h2>Projects</h2>
+      <p>Things I've built and shipped on my own time.</p>
+    </div>
+    <div class="grid">
+      <article class="card live">
+        <span class="tag">Live · Web app</span>
+        <h3>Tempo</h3>
+        <p>A calm place to notice your weeks. A private, mobile-first app for reflecting on each week, with accounts managed by an admin.</p>
+        <ul class="chips"><li>Next.js</li><li>Auth</li><li>Vercel</li></ul>
+        <div class="row"><a href="https://tempo-two-xi.vercel.app/">Open live app →</a></div>
+      </article>
+      <article class="card live">
+        <span class="tag">Live · Web app</span>
+        <h3>Boyfriend's Guide</h3>
+        <p>A little help remembering the things that matter. A personal, mobile-first app for keeping track of the details and dates that matter in a relationship.</p>
+        <ul class="chips"><li>Next.js</li><li>Vercel</li></ul>
+        <div class="row"><a href="https://boyfriends-guide.vercel.app/">Open live app →</a></div>
+      </article>
+      <article class="card live">
+        <span class="tag">Live · Self-hosted</span>
+        <h3>URL Shortener</h3>
+        <p>A self-hosted link shortener with user accounts, deployed on my own server behind a custom domain.</p>
+        <ul class="chips"><li>Node.js</li><li>Auth</li><li>Self-hosted</li></ul>
+        <div class="row"><a href="https://manish-urlshortener.duckdns.org/login">Open live app →</a></div>
+      </article>
+      <article class="card">
+        <span class="tag">Open source</span>
+        <h3>Jobster</h3>
+        <p>An end-to-end job search platform for creating, tracking and filtering job applications.</p>
+        <ul class="chips"><li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li></ul>
+        <div class="row"><a href="https://github.com/dev-chandmanish/Jobster-API">View code →</a></div>
+      </article>
+      <article class="card">
+        <span class="tag">Open source</span>
+        <h3>Task Manager API</h3>
+        <p>A REST API for creating, updating and deleting tasks.</p>
+        <ul class="chips"><li>Node.js</li><li>Express</li><li>MongoDB</li></ul>
+        <div class="row"><a href="https://github.com/dev-chandmanish/Task-Manager">View code →</a></div>
+      </article>
+      <article class="card">
+        <span class="tag">More on GitHub</span>
+        <h3>All repositories</h3>
+        <p>APIs, experiments and earlier C++ work, including a jobs API and a stock app.</p>
+        <div class="row"><a href="https://github.com/dev-chandmanish?tab=repositories">Browse GitHub →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="head"><h2>Skills</h2></div>
+    <div class="skills">
+      <div class="card"><h3>Backend</h3><ul class="chips"><li>Node.js</li><li>Express</li><li>TypeScript</li><li>GraphQL</li><li>REST API design</li><li>Microservices</li><li>Java / Spring Boot</li></ul></div>
+      <div class="card"><h3>Frontend</h3><ul class="chips"><li>React</li><li>Redux</li><li>Next.js</li><li>JavaScript</li><li>HTML / CSS</li></ul></div>
+      <div class="card"><h3>Data</h3><ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Firestore</li><li>DynamoDB</li></ul></div>
+      <div class="card"><h3>Cloud and infra</h3><ul class="chips"><li>Google Cloud Pub/Sub</li><li>AWS Lambda</li><li>EventBridge</li><li>S3 / SQS</li><li>Docker</li><li>Jenkins</li></ul></div>
+      <div class="card"><h3>AI</h3><ul class="chips"><li>OpenAI tool calling</li><li>MCP servers</li><li>Gemini API</li><li>Agentic AI</li><li>Cursor</li></ul></div>
+      <div class="card"><h3>Quality and ops</h3><ul class="chips"><li>Playwright</li><li>Cucumber</li><li>ELK stack</li><li>Metabase</li><li>CodeScene</li><li>System design</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band zone" id="contact">
+  <div class="wrap two">
+    <div class="edu">
+      <h2>Education</h2>
+      <h3 style="margin-top:18px">B.Tech, Computer Science and Engineering</h3>
+      <p>Delhi Technological University · 2021</p>
+      <h3 style="margin-top:18px">Class XII, CBSE</h3>
+      <p>2016</p>
+    </div>
+    <div class="contact">
+      <h2>Let's talk</h2>
+      <p>Open to senior backend and full-stack roles, especially work on distributed systems and AI products.</p>
+      <a class="mail" href="mailto:chandmanish99@gmail.com">chandmanish99@gmail.com</a>
+      <div class="cta">
+        <a class="btn solid" href="https://github.com/dev-chandmanish">GitHub</a>
+        <a class="btn ghost" href="resume.pdf">Résumé (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Manish Chand</span>
+    <span>Gurugram, India</span>
+  </div>
+</footer>
+
+</body>
+</html>
